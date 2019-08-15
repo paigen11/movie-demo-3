@@ -32,21 +32,10 @@ export default class NowPlaying extends Component {
 
   render() {
     const { error, loading, movies } = this.state;
-
-    if (error) {
-      return (
-        <h3>
-          Woops, something went wrong trying to fetch movies in theaters now.
-        </h3>
-      );
-    }
-
-    if (loading) {
-      return <h3>Loading movie data now...</h3>;
-    }
+    let movieInfo = null;
 
     if (!loading && !error && movies.length > 0) {
-      return movies.map(movie => {
+      movieInfo = movies.map(movie => {
         return (
           <Movie
             key={movie.id}
@@ -58,5 +47,24 @@ export default class NowPlaying extends Component {
         );
       });
     }
+
+    if (error) {
+      movieInfo = (
+        <h3>
+          Woops, something went wrong trying to fetch movies in theaters now.
+        </h3>
+      );
+    }
+
+    if (loading) {
+      movieInfo = <h3>Loading movie data now...</h3>;
+    }
+
+    return (
+      <>
+        <h2>Movies In Theaters Now</h2>
+        {movieInfo}
+      </>
+    );
   }
 }
