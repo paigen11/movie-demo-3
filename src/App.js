@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import NowPlaying from './containers/NowPlaying';
+import MovieSearch from './containers/MovieSearch';
 import './App.css';
 
 function App() {
@@ -9,7 +10,10 @@ function App() {
       <Router>
         <div>
           <Header />
-          <Route exact path="/" component={NowPlaying} />
+          <Switch>
+            <Route exact path="/" component={NowPlaying} />
+            <Route exact path="/search" component={MovieSearch} />
+          </Switch>
         </div>
       </Router>
     </div>
@@ -20,7 +24,10 @@ function Header() {
   return (
     <ul>
       <li>
-        <Link to="/">Now Playing Movies</Link>
+        <Link to="/">Movies in Theaters Now</Link>
+      </li>
+      <li>
+        <Link to="/search">Movie Search</Link>
       </li>
     </ul>
   );
