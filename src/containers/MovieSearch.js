@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { API_KEY, SEARCH_MOVIE_PATH } from '../constants/Constants';
+import * as movieAPI from '../services/movieAPI';
+
 import Movie from '../components/Movie/Movie';
 
 export default class MovieSearch extends Component {
@@ -18,13 +18,9 @@ export default class MovieSearch extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     try {
-      const movies = await axios.get(
-        `${SEARCH_MOVIE_PATH}?query=${this.state.value}&${API_KEY}`,
-      );
-      console.log(movies.data.results);
-      this.setState({ movies: movies.data.results });
+      const movies = await movieAPI.searchMovies(this.state.value);
+      this.setState({ movies });
     } catch (err) {
-      console.error(`There was a problem finding movies: ${err}`);
       this.setState({ error: true });
     }
   };
@@ -77,6 +73,7 @@ export default class MovieSearch extends Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
+        
         {movieInfo ? movieInfo : null}
       </>
     );

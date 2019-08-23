@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { API_KEY, BASE_URL_PATH } from '../../constants/Constants';
-import Movie from '../../components/Movie/Movie';
-import Card from '../../components/Card/Card';
-import './GenreList.scss';
+import MovieList from '../../components/Movie/MovieList';
+import * as movieAPI from '../../services/movieAPI';
 
 export default class GenreList extends Component {
   state = {
@@ -13,63 +10,20 @@ export default class GenreList extends Component {
   };
   async componentDidMount() {
     try {
-      const playingMovies = await axios.get(
-        `${BASE_URL_PATH}discover/movie?${API_KEY}&with_genres=${this.props.genreId}`,
-      );
-      console.log(playingMovies.data);
-      this.setState({
-        movies: playingMovies.data.results,
-        loading: false,
-      });
+      const movies = await movieAPI.getMoviesByGenre(this.props.genreId);
+      this.setState({ movies, loading: false });
     } catch (err) {
-      console.error(
-        `Something went wrong fetching the now playing data: ${err}`,
-      );
-      this.setState({
-        loading: false,
-        error: true,
-      });
+      console.log('here')
+      this.setState({ loading: false, error: true });
     }
   }
 
   render() {
-    const { error, loading, movies } = this.state;
-    let movieInfo = null;
-
-    if (!loading && !error && movies.length > 0) {
-      movieInfo = movies.map(movie => {
-        return (
-          <Card>
-          <Movie
-            key={movie.id}
-            title={movie.title}
-            overview={movie.overview}
-            poster={movie.poster_path}
-            released={movie.release_date}
-          />
-          </Card>
-        );
-      });
-    }
-
-    if (error) {
-      movieInfo = (
-        <h3>
-          Woops, something went wrong trying to fetch movies in theaters now.
-        </h3>
-      );
-    }
-
-    if (loading) {
-      movieInfo = <h3>Loading movie data now...</h3>;
-    }
 
     return (
       <>
-        <h2>Movies In Theaters Now</h2>
-        <div className="movie-list">
-          {movieInfo}
-        </div>
+        <h2>Movies for the selected genre</h2>
+        <MovieList loading={this.state.loading} error={this.state.error} movies={this.state.movies} />
       </>
     );
   }

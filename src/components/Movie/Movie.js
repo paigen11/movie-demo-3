@@ -1,6 +1,6 @@
 import React from 'react';
 import { BASE_POSTER_PATH } from '../../constants/Constants';
-import './Movie.scss';
+import './MovieList.scss';
 
 const movie = props => (
   <div className="movie-component">

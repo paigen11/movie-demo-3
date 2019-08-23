@@ -1,5 +1,4 @@
 import React from 'react';
-// import { BASE_POSTER_PATH } from '../constants/Constants';
 import './Genre.scss';
 
 const Genre = props => (
