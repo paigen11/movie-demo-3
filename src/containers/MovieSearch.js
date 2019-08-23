@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { API_KEY, SEARCH_MOVIE_PATH } from '../constants/Constants';
-import Movie from '../components/Movie';
+import Movie from '../components/Movie/Movie';
 
 export default class MovieSearch extends Component {
   state = {
