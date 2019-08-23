@@ -13,7 +13,7 @@ export default class NowPlaying extends Component {
   async componentDidMount() {
     try {
       const playingMovies = await axios.get(
-        `${BASE_MOVIE_PATH}now_playing${API_KEY}`,
+        `${BASE_MOVIE_PATH}now_playing?${API_KEY}`,
       );
       console.log(playingMovies.data);
       this.setState({

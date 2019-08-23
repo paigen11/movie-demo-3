@@ -15,7 +15,7 @@ export default class Genres extends Component {
   async componentDidMount() {
     try {
       const genres = await axios.get(
-        `${BASE_URL_PATH}genre/movie/list${API_KEY}`,
+        `${BASE_URL_PATH}genre/movie/list?${API_KEY}`,
       );
       this.setState({
         genres: genres.data.genres,

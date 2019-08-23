@@ -4,14 +4,14 @@ import './Movie.scss';
 
 const movie = props => (
   <div className="movie-component">
-    <h3 className="movie-title">{props.title}</h3>
-    <div className="movie-details"> 
       {props.poster && (
         <img src={`${BASE_POSTER_PATH}w300/${props.poster}`} alt="movie poster" className="movie-poster" />
-      )}
-    <p className="movie-overview">{props.overview}</p>
+        )}
+    <div className="movie-details"> 
+      <h1 className="movie-title">{props.title}</h1>
+      <p className="movie-overview">{props.overview}</p>
+      <p className="movie-released">{props.released}</p>
     </div>
-    <p className="movie-released">{props.released}</p>
   </div>
 );
 

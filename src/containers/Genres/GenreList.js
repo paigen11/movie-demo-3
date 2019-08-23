@@ -3,6 +3,7 @@ import axios from 'axios';
 import { API_KEY, BASE_URL_PATH } from '../../constants/Constants';
 import Movie from '../../components/Movie/Movie';
 import Card from '../../components/Card/Card';
+import './GenreList.scss';
 
 export default class GenreList extends Component {
   state = {
@@ -13,7 +14,7 @@ export default class GenreList extends Component {
   async componentDidMount() {
     try {
       const playingMovies = await axios.get(
-        `${BASE_URL_PATH}discover/movie${API_KEY}&with_genres=${this.props.genreId}`,
+        `${BASE_URL_PATH}discover/movie?${API_KEY}&with_genres=${this.props.genreId}`,
       );
       console.log(playingMovies.data);
       this.setState({
@@ -64,10 +65,12 @@ export default class GenreList extends Component {
     }
 
     return (
-      <div className="movie-list">
+      <>
         <h2>Movies In Theaters Now</h2>
-        {movieInfo}
-      </div>
+        <div className="movie-list">
+          {movieInfo}
+        </div>
+      </>
     );
   }
 }
