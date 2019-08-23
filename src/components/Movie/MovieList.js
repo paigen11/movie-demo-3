@@ -12,7 +12,7 @@ export default class MovieList extends Component {
     if (!loading && !error && movies.length > 0) {
       movieInfo = movies.map(movie => {
         return (
-          <Card>
+          <Card key={movie.id}>
             <Movie
               key={movie.id}
               title={movie.title}

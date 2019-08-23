@@ -30,9 +30,9 @@ export default class Genres extends Component {
     let genreInfo = null;
 
     if (!loading && !error && genres.length) {
-      genreInfo = genres.map(movie => {
+      genreInfo = genres.map(genre => {
         return (
-          <Genre id={movie.id} name ={movie.name} goToGenreList={this.goToGenreList}/>
+          <Genre key={genre.id} id={genre.id} name ={genre.name} goToGenreList={this.goToGenreList}/>
         );
       });
     }
