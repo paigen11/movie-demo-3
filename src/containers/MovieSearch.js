@@ -73,7 +73,7 @@ export default class MovieSearch extends Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-        
+
         {movieInfo ? movieInfo : null}
       </>
     );
