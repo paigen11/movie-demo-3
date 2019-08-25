@@ -21,7 +21,7 @@ export default class GenreList extends Component {
   render() {
     return (
       <>
-        <h2>{this.props.genreName} Movies</h2>
+        <h1>{this.props.genreName} Movies</h1>
         <MovieList
           loading={this.state.loading}
           error={this.state.error}

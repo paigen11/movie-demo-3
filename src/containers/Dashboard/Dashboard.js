@@ -18,7 +18,7 @@ export class Dashboard extends Component {
           <NavLink to="/upcoming">
             <div>
               <i className="fa fa-video-camera" aria-hidden="true" />
-              <h2>Upcoming</h2>
+              <h1>Upcoming</h1>
             </div>
           </NavLink>
         </div>
@@ -26,7 +26,7 @@ export class Dashboard extends Component {
           <NavLink to="/genres">
             <div>
               <i className="fa fa-film" aria-hidden="true" />
-              <h2>Genres</h2>
+              <h1>Genres</h1>
             </div>
           </NavLink>
         </div>

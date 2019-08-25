@@ -8,7 +8,7 @@ import {
 import NowPlaying from './containers/NowPlaying/NowPlaying';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Upcoming from './containers/Upcoming/Upcoming';
-import MovieSearch from './containers/MovieSearch';
+import MovieSearch from './containers/MovieSearch/MovieSearch';
 import Genres from './containers/Genres/Genres';
 import TmdbIcon from './assets/tmdbIcon.png';
 import './App.css';
