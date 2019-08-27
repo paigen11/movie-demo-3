@@ -1,0 +1,13 @@
+.movie-details-wrapper {
+  color: white;
+
+  img.movie-details-backdrop {
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 83px;
+    left: 0;
+    z-index: -1;
+  }
+}

@@ -17,9 +17,14 @@ export default class MovieList extends Component {
     }
   };
 
+  renderRedirect = () => {
+    if (this.state.movieDetails) {
+      return <Redirect to={`/movie/${this.state.id}`} />;
+    }
+  };
+
   render() {
     const { error, loading, movies } = this.props;
-    const { movieDetails, id } = this.state;
     let movieInfo = null;
 
     if (!loading && !error && movies.length > 0) {
@@ -53,10 +58,13 @@ export default class MovieList extends Component {
       movieInfo = <h3>Loading movie data now...</h3>;
     }
 
-    if (movieDetails) {
-      return <Redirect to={`/movie/${id}`} />;
-    }
-
-    return <div className="movie-list">{movieInfo}</div>;
+    return (
+      <>
+        <div className="movie-list">
+          {this.renderRedirect()}
+          {movieInfo}
+        </div>
+      </>
+    );
   }
 }
