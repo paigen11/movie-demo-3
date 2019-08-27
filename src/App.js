@@ -10,6 +10,7 @@ import Dashboard from './containers/Dashboard/Dashboard';
 import Upcoming from './containers/Upcoming/Upcoming';
 import MovieSearch from './containers/MovieSearch/MovieSearch';
 import Genres from './containers/Genres/Genres';
+import MovieDetails from './containers/MovieDetails/MovieDetails';
 import TmdbIcon from './assets/tmdbIcon.png';
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/nowplaying" component={NowPlaying} />
           <Route exact path="/upcoming" component={Upcoming} />
           <Route exact path="/genres" component={Genres} />
+          <Route exact path="/movie/:id" component={MovieDetails} />
         </Switch>
       </Router>
     </div>

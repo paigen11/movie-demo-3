@@ -1,20 +1,36 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import Movie from './Movie';
 import Card from '../Card/Card';
 import './MovieList.scss';
 
 export default class MovieList extends Component {
+  state = {
+    id: null,
+    movieDetails: false,
+  };
+
+  selectedMovieHandler = movieId => {
+    console.log(movieId);
+    if (movieId !== null) {
+      this.setState({ id: movieId, movieDetails: true });
+    }
+  };
 
   render() {
     const { error, loading, movies } = this.props;
+    const { movieDetails, id } = this.state;
     let movieInfo = null;
 
     if (!loading && !error && movies.length > 0) {
       movieInfo = movies.map(movie => {
         return (
-          <Card key={movie.id}>
+          <Card
+            key={movie.id}
+            movieId={movie.id}
+            goToMovieDetails={this.selectedMovieHandler}
+          >
             <Movie
-              key={movie.id}
               title={movie.title}
               overview={movie.overview}
               poster={movie.poster_path}
@@ -37,10 +53,10 @@ export default class MovieList extends Component {
       movieInfo = <h3>Loading movie data now...</h3>;
     }
 
-    return (
-        <div className="movie-list">
-          {movieInfo}
-        </div>
-    );
+    if (movieDetails) {
+      return <Redirect to={`/movie/${id}`} />;
+    }
+
+    return <div className="movie-list">{movieInfo}</div>;
   }
 }
