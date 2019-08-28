@@ -1,13 +1,48 @@
 .movie-details-wrapper {
   color: white;
 
+  h1 {
+    background: rgba(132, 127, 134, 0.8);
+    padding: 20px;
+    border-radius: 3%;
+    display: inline-block;
+  }
+
   img.movie-details-backdrop {
-    min-width: 100%;
+    min-height: 100%;
+    min-width: 1280px;
+
+    /* Set up proportionate scaling */
     width: 100%;
     height: auto;
+
+    /* Set up positioning */
     position: fixed;
-    top: 83px;
+    top: 0;
     left: 0;
     z-index: -1;
+  }
+
+  .movie-details-poster-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 30px 30px 30px;
+
+    .movie-details-poster {
+      border-radius: 3%;
+      border: solid #847f86 10px;
+    }
+
+    .movie-details-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 40%;
+      min-height: 400px;
+      background: rgba(132, 127, 134, 0.6);
+      padding: 20px;
+      border-radius: 3%;
+    }
   }
 }
