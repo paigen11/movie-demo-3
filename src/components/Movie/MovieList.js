@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import Movie from './Movie';
 import Card from '../Card/Card';
 import './MovieList.scss';
 
 export default class MovieList extends Component {
+  state = {
+    id: null,
+    movieDetails: false,
+  };
+
+  selectedMovieHandler = movieId => {
+    console.log(movieId);
+    if (movieId !== null) {
+      this.setState({ id: movieId, movieDetails: true });
+    }
+  };
+
+  renderRedirect = () => {
+    if (this.state.movieDetails) {
+      return <Redirect to={`/movie/${this.state.id}`} />;
+    }
+  };
 
   render() {
     const { error, loading, movies } = this.props;
@@ -12,9 +30,12 @@ export default class MovieList extends Component {
     if (!loading && !error && movies.length > 0) {
       movieInfo = movies.map(movie => {
         return (
-          <Card key={movie.id}>
+          <Card
+            key={movie.id}
+            movieId={movie.id}
+            goToMovieDetails={this.selectedMovieHandler}
+          >
             <Movie
-              key={movie.id}
               title={movie.title}
               overview={movie.overview}
               poster={movie.poster_path}
@@ -38,9 +59,12 @@ export default class MovieList extends Component {
     }
 
     return (
+      <>
         <div className="movie-list">
+          {this.renderRedirect()}
           {movieInfo}
         </div>
+      </>
     );
   }
 }

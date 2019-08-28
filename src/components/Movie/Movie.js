@@ -15,8 +15,12 @@ const movie = props => (
     )}
     <div className="movie-details">
       <h1 className="movie-title">{props.title}</h1>
-      <p className="movie-overview">{props.overview}</p>
-      <p className="movie-released">Release Date: {props.released}</p>
+      <p className="movie-overview">
+        <strong>Synopsis:</strong> {props.overview}
+      </p>
+      <p className="movie-released">
+        <strong>Release Date:</strong> {props.released}
+      </p>
     </div>
   </div>
   </NavLink>

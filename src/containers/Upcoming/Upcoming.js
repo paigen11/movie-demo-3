@@ -15,15 +15,19 @@ export default class Upcoming extends Component {
       const movies = await movieAPI.getUpcoming();
       this.setState({ movies, loading: false });
     } catch (err) {
-      this.setState({ loading: false, error: true});
+      this.setState({ loading: false, error: true });
     }
   }
 
   render() {
     return (
       <>
-        <h2>Upcoming Movies</h2>
-        <MovieList loading={this.state.loading} error={this.state.error} movies={this.state.movies} />
+        <h1>Upcoming Movies</h1>
+        <MovieList
+          loading={this.state.loading}
+          error={this.state.error}
+          movies={this.state.movies}
+        />
       </>
     );
   }

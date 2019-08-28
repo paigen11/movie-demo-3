@@ -54,7 +54,7 @@ export default class Genres extends Component {
       <>
         {this.state.selectedGenre === 0 ? (
           <>
-            <h2>Choose a Genre</h2>
+            <h1>Choose a Genre</h1>
             <div className="genre-list">{genreInfo}</div>
           </>
         ) : (

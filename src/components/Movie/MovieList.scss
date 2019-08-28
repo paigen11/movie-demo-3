@@ -10,7 +10,10 @@
   }
 
   .movie-poster {
+    border-radius: 3%;
+    border: solid #847f86 10px;
   }
+
   .movie-title {
     padding: 0 30px;
   }
@@ -18,8 +21,11 @@
   .movie-overview {
     padding: 0 20px;
     font-family: monospace;
+    font-size: 14px;
   }
+
   .movie-released {
+    font-size: 18px;
   }
 }
 
