@@ -12,7 +12,6 @@ import MovieSearch from './containers/MovieSearch/MovieSearch';
 import Genres from './containers/Genres/Genres';
 import MovieDetails from './containers/MovieDetails/MovieDetails';
 import TmdbIcon from './assets/tmdbIcon.png';
-import MovieDetails from './components/Movie/MovieDetails';
 import './App.css';
 
 function App() {
@@ -26,11 +25,7 @@ function App() {
           <Route exact path="/nowplaying" component={NowPlaying} />
           <Route exact path="/upcoming" component={Upcoming} />
           <Route exact path="/genres" component={Genres} />
-<<<<<<< HEAD
-          <Route exact path="/movie/" component={MovieDetails} />
-=======
           <Route exact path="/movie/:id" component={MovieDetails} />
->>>>>>> a336453a52b01e4017e3ee660b9d1d02b6a858cc
         </Switch>
       </Router>
     </div>
