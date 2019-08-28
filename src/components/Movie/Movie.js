@@ -1,8 +1,10 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { BASE_POSTER_PATH } from '../../constants/Constants';
 import './MovieList.scss';
 
 const movie = props => (
+  <NavLink to='/details'>
   <div className="movie-component">
     {props.poster && (
       <img
@@ -17,6 +19,7 @@ const movie = props => (
       <p className="movie-released">Release Date: {props.released}</p>
     </div>
   </div>
+  </NavLink>
 );
 
 export default movie;

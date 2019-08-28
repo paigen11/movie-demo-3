@@ -68,4 +68,24 @@ export const searchMovies = async (searchInput) =>{
       }
 }
 
+export const getMovieReviews = async movieId =>{
+  try {
+      const response = await axios.get(`${BASE_MOVIE_PATH}${movieId}/reviews?${API_KEY}&language=en-US`);
+      console.log(response.data.results);
+      // return response.data.results;
+    } catch (err) {
+      console.error(`There was a problem finding movies: ${err}`);
+      throw err;
+    }
+}
 
+export const getMovieDetails = async movieId =>{
+  try {
+      const response = await axios.get(`${BASE_MOVIE_PATH}${movieId}?${API_KEY}&language=en-US`);
+      console.log(response.data.results);
+      // return response.data.results;
+    } catch (err) {
+      console.error(`There was a problem finding movies: ${err}`);
+      throw err;
+    }
+}
