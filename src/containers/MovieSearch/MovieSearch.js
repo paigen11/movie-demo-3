@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { API_KEY, SEARCH_MOVIE_PATH } from '../constants/Constants';
-import Movie from '../components/Movie';
+import * as movieAPI from '../../services/movieAPI';
+import MovieList from '../../components/Movie/MovieList';
+import './MovieSearch.scss';
 
 export default class MovieSearch extends Component {
   state = {
     value: '',
     movies: null,
     error: false,
+    loading: false,
   };
 
   handleChange = event => {
@@ -18,19 +19,16 @@ export default class MovieSearch extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     try {
-      const movies = await axios.get(
-        `${SEARCH_MOVIE_PATH}?query=${this.state.value}&${API_KEY}`,
-      );
-      console.log(movies.data.results);
-      this.setState({ movies: movies.data.results });
+      this.setState({ loading: true });
+      const movies = await movieAPI.searchMovies(this.state.value);
+      this.setState({ movies, loading: false });
     } catch (err) {
-      console.error(`There was a problem finding movies: ${err}`);
-      this.setState({ error: true });
+      this.setState({ error: true, loading: false });
     }
   };
 
   render() {
-    const { movies, error } = this.state;
+    const { movies, error, loading } = this.state;
 
     let movieInfo = null;
 
@@ -40,17 +38,16 @@ export default class MovieSearch extends Component {
           <h3>No movies match your search terms. Please try again.</h3>
         );
       } else if (movies.length > 0) {
-        movieInfo = movies.map(movie => {
-          return (
-            <Movie
-              key={movie.id}
-              title={movie.title}
-              overview={movie.overview}
-              poster={movie.poster_path}
-              released={movie.release_date}
+        movieInfo = (
+          <>
+            <h2>Movie Results for: {this.state.value}</h2>
+            <MovieList
+              loading={this.state.loading}
+              error={this.state.error}
+              movies={this.state.movies}
             />
-          );
-        });
+          </>
+        );
       }
     }
 
@@ -63,19 +60,24 @@ export default class MovieSearch extends Component {
       );
     }
 
+    if (loading) {
+      movieInfo = <h3>Searching movies now...</h3>;
+    }
+
     return (
       <>
-        <h2>Movie Search</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label>
+        <h1>Movie Search</h1>
+        <form className="search-form-wrapper" onSubmit={this.handleSubmit}>
+          <label className="search-label">
             Search Movie Titles Here:
             <input
+              className="search-input"
               type="text"
               value={this.state.value}
               onChange={this.handleChange}
             />
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Search" />
         </form>
         {movieInfo ? movieInfo : null}
       </>
