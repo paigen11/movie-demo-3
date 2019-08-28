@@ -1,19 +1,19 @@
-    .card-component {
-      margin-bottom: 20px;
-      margin-right: 20px;
-      width: 800px;
-      border: 1px solid #ffffff;
-      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-      border-radius: 2px;
-      background: #ffffff;
-      transition: all 0.15s ease-in-out;
-  
-      &:hover {
-        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
-      }
-  
-      &:active {
-        background: #fbfbfb;
-        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-      }
-    }
+.card-component {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  width: 750px;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  background: #ffffff;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    background: #fbfbfb;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  }
+}

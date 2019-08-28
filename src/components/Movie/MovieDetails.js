@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import MovieList from '../../components/Movie/MovieList';
+import MovieList from './MovieList';
 import * as movieAPI from '../../services/movieAPI';
-import './Upcoming.scss';
+import './NowPlaying.scss';
 
-export default class Upcoming extends Component {
+export default class MovieDetails extends Component {
   state = {
     movies: [],
     loading: true,
@@ -12,7 +12,8 @@ export default class Upcoming extends Component {
 
   async componentDidMount() {
     try {
-      const movies = await movieAPI.getUpcoming();
+      const movies = await movieAPI.getMovieDetails(this.props.movieId);
+      const movies2 = await movieAPI.getMovieReviews(this.props.movieId);
       this.setState({ movies, loading: false });
     } catch (err) {
       this.setState({ loading: false, error: true });
@@ -22,12 +23,6 @@ export default class Upcoming extends Component {
   render() {
     return (
       <>
-        <h1>Upcoming Movies</h1>
-        <MovieList
-          loading={this.state.loading}
-          error={this.state.error}
-          movies={this.state.movies}
-        />
       </>
     );
   }

@@ -1,0 +1,18 @@
+.search-form-wrapper {
+  font-size: 24px;
+
+  .search-label {
+    .search-input {
+      margin: 0 10px;
+      font-size: 24px;
+      border-radius: 3%;
+    }
+  }
+
+  input[type='submit'] {
+    background-color: #e1735b;
+    font-size: 24px;
+    padding: 2px 12px;
+    border-radius: 3%;
+  }
+}

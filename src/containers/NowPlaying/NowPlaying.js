@@ -22,8 +22,12 @@ export default class NowPlaying extends Component {
   render() {
     return (
       <>
-        <h2>Movies In Theaters Now</h2>
-        <MovieList loading={this.state.loading} error={this.state.error} movies={this.state.movies} />
+        <h1>Movies In Theaters Now</h1>
+        <MovieList
+          loading={this.state.loading}
+          error={this.state.error}
+          movies={this.state.movies}
+        />
       </>
     );
   }

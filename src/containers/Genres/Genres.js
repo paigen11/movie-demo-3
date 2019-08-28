@@ -10,9 +10,10 @@ export default class Genres extends Component {
     selectedGenre: 0,
     loading: true,
     error: false,
+    selectedGenreName: '',
   };
   async componentDidMount() {
-    try{
+    try {
       const genres = await movieAPI.getAllGenres();
       this.setState({ genres, loading: false });
     } catch (err) {
@@ -20,10 +21,9 @@ export default class Genres extends Component {
     }
   }
 
-  goToGenreList = (genreId) => {
-      console.log('genreId', genreId)
-      this.setState({selectedGenre: genreId});
-  }
+  goToGenreList = (genreId, genreName) => {
+    this.setState({ selectedGenre: genreId, selectedGenreName: genreName });
+  };
 
   render() {
     const { error, loading, genres } = this.state;
@@ -32,17 +32,18 @@ export default class Genres extends Component {
     if (!loading && !error && genres.length) {
       genreInfo = genres.map(genre => {
         return (
-          <Genre key={genre.id} id={genre.id} name ={genre.name} goToGenreList={this.goToGenreList}/>
+          <Genre
+            key={genre.id}
+            id={genre.id}
+            name={genre.name}
+            goToGenreList={this.goToGenreList}
+          />
         );
       });
     }
 
     if (error) {
-      genreInfo = (
-        <h3>
-          Woops, something went wrong trying to fetch genres.
-        </h3>
-      );
+      genreInfo = <h3>Woops, something went wrong trying to fetch genres.</h3>;
     }
 
     if (loading) {
@@ -50,14 +51,18 @@ export default class Genres extends Component {
     }
 
     return (
-      <>{this.state.selectedGenre === 0 ?
-        (<>
-          <h2>Choose a Genre</h2>
-          <div className="genre-list">
-            {genreInfo}
-          </div>
-        </>) : (<GenreList genreId={this.state.selectedGenre} />)
-        }
+      <>
+        {this.state.selectedGenre === 0 ? (
+          <>
+            <h1>Choose a Genre</h1>
+            <div className="genre-list">{genreInfo}</div>
+          </>
+        ) : (
+          <GenreList
+            genreId={this.state.selectedGenre}
+            genreName={this.state.selectedGenreName}
+          />
+        )}
       </>
     );
   }
