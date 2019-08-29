@@ -4,7 +4,6 @@
   h1 {
     background: rgba(132, 127, 134, 0.8);
     padding: 20px;
-    border-radius: 3%;
     display: inline-block;
   }
 
@@ -40,9 +39,11 @@
       justify-content: space-evenly;
       width: 40%;
       min-height: 400px;
-      background: rgba(132, 127, 134, 0.6);
+      background: rgba(132, 127, 134, 0.7);
       padding: 20px;
       border-radius: 3%;
+      font-family: monospace;
+      font-size: 22px;
     }
   }
 }

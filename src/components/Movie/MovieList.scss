@@ -1,6 +1,5 @@
 .movie-component {
   display: flex;
-  // flex-direction: column;
   margin: 20px 10px;
 
   .movie-details {
@@ -11,7 +10,7 @@
 
   .movie-poster {
     border-radius: 3%;
-    border: solid #847f86 10px;
+    border: solid #847f86 3px;
   }
 
   .movie-title {
@@ -21,7 +20,7 @@
   .movie-overview {
     padding: 0 20px;
     font-family: monospace;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .movie-released {
