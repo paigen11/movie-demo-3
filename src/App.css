@@ -2,33 +2,3 @@
   text-align: center;
   font-family: sans-serif;
 }
-
-.navbar-wrapper {
-  background: #b65be1;
-  margin-top: -25px;
-  font-size: 24px;
-}
-
-.navbar-links {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-link {
-  list-style: none;
-  margin: 15px;
-  width: auto;
-}
-
-.navbar-link > a > img {
-  height: 50px;
-}
-
-.navbar-link > a {
-  text-decoration: none;
-  color: #f6eafb;
-}
-
-a.active {
-  color: #5be1b6;
-}
