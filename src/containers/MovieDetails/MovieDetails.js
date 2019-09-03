@@ -60,11 +60,18 @@ export default class MovieDetails extends Component {
               alt="movie poster"
             />
             <div className="movie-details-info">
-              <h3>Movie Overview: {movieInfo.overview}</h3>
-              <h3>Release Date: {movieInfo.release_date}</h3>
-              <h3>Average Rating: {movieInfo.vote_average}</h3>
-              <h3>Reviews</h3>
-              <div>{reviews}</div>
+              <div>
+                <strong>Movie Overview:</strong> {movieInfo.overview}
+              </div>
+              <div>
+                <strong>Release Date:</strong> {movieInfo.release_date}
+              </div>
+              <div>
+                <strong>Average Rating:</strong> {movieInfo.vote_average}
+              </div>
+             {reviews.length && <div>
+                <strong>Reviews:</strong> {reviews}
+              </div>}
             </div>
           </div>
         </div>
