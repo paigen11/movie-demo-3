@@ -1,27 +1,36 @@
 import React, { Component } from 'react';
-import { getMovieDetailsById } from '../../services/movieAPI';
+import { getMovieDetailsById, getMovieReviews } from '../../services/movieAPI';
 import {
   BASE_BACKDROP_PATH,
   BASE_POSTER_PATH,
 } from '../../constants/Constants';
+import Review from '../../components/Review/Review'
 import './MovieDetails.scss';
 
 export default class MovieDetails extends Component {
   state = {
     movieInfo: null,
+    movieReviews: null,
     loading: true,
   };
 
   async componentDidMount() {
     if (this.props.match.params.id) {
       const movieInfo = await getMovieDetailsById(this.props.match.params.id);
-      this.setState({ loading: false, movieInfo });
-      console.log(movieInfo);
+      const movieReviews = await getMovieReviews(this.props.match.params.id);
+      this.setState({ loading: false, movieInfo, movieReviews });
     }
   }
 
   render() {
-    const { movieInfo, loading } = this.state;
+    const { movieInfo, loading, movieReviews } = this.state;
+    let reviews;
+    if (movieReviews) {
+      reviews = movieReviews.map(review => {
+        return <Review key={review.id} review={review} />
+      })
+    }
+    
 
     let movieDetails = null;
 
@@ -54,6 +63,8 @@ export default class MovieDetails extends Component {
               <h3>Movie Overview: {movieInfo.overview}</h3>
               <h3>Release Date: {movieInfo.release_date}</h3>
               <h3>Average Rating: {movieInfo.vote_average}</h3>
+              <h3>Reviews</h3>
+              <div>{reviews}</div>
             </div>
           </div>
         </div>
