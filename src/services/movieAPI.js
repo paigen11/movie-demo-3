@@ -66,8 +66,8 @@ export const getUpcoming = async () => {
 export const getMovieReviews = async movieId =>{
   try {
       const response = await axios.get(`${BASE_MOVIE_PATH}${movieId}/reviews?${API_KEY}`);
-      console.log(response.data);
-      // return response.data.results;
+      console.log('reviews', response.data.results);
+      return response.data.results;
     } catch (err) {
       console.error(`There was a problem finding movies: ${err}`);
       throw err;
