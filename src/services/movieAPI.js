@@ -1,10 +1,10 @@
 import axios from 'axios';
-
-export const API_KEY = 'api_key=fec8b5ab27b292a68294261bb21b04a5';
-export const BASE_MOVIE_PATH = 'http://api.themoviedb.org/3/movie/';
-export const SEARCH_MOVIE_PATH = 'https://api.themoviedb.org/3/search/movie';
-export const BASE_URL_PATH = 'http://api.themoviedb.org/3/';
-export const BASE_POSTER_PATH = 'http://image.tmdb.org/t/p/';
+import {
+  API_KEY,
+  BASE_MOVIE_PATH,
+  SEARCH_MOVIE_PATH,
+  BASE_URL_PATH,
+} from '../constants/Constants';
 
 export let genres = [];
 
@@ -63,16 +63,18 @@ export const getUpcoming = async () => {
   }
 };
 
-export const getMovieReviews = async movieId =>{
+export const getMovieReviews = async movieId => {
   try {
-      const response = await axios.get(`${BASE_MOVIE_PATH}${movieId}/reviews?${API_KEY}`);
-      console.log('reviews', response.data.results);
-      return response.data.results;
-    } catch (err) {
-      console.error(`There was a problem finding movies: ${err}`);
-      throw err;
-    }
-}
+    const response = await axios.get(
+      `${BASE_MOVIE_PATH}${movieId}/reviews?${API_KEY}`,
+    );
+    console.log('reviews', response.data.results);
+    return response.data.results;
+  } catch (err) {
+    console.error(`There was a problem finding movies: ${err}`);
+    throw err;
+  }
+};
 
 export const searchMovies = async searchInput => {
   try {
