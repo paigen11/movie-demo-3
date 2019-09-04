@@ -6,7 +6,7 @@ const movie = props => (
   <div className="movie-component">
     {props.poster && (
       <img
-        src={`${BASE_POSTER_PATH}w300/${props.poster}`}
+        src={`${BASE_POSTER_PATH}/w300${props.poster}`}
         alt="movie poster"
         className="movie-poster"
       />

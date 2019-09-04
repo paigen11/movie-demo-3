@@ -4,7 +4,7 @@ import {
   BASE_BACKDROP_PATH,
   BASE_POSTER_PATH,
 } from '../../constants/Constants';
-import Review from '../../components/Review/Review'
+import Review from '../../components/Review/Review';
 import './MovieDetails.scss';
 
 export default class MovieDetails extends Component {
@@ -27,17 +27,17 @@ export default class MovieDetails extends Component {
     let reviews;
     if (movieReviews) {
       reviews = movieReviews.map(review => {
-        return <Review key={review.id} review={review} />
-      })
+        return (
+          <Review key={review.id} author={review.author} review={review} />
+        );
+      });
     }
-    
 
     let movieDetails = null;
 
     if (loading) {
       movieDetails = (
         <>
-          {' '}
           <h1>Movie Details</h1>
           <h3>Loading movie details now...</h3>
         </>
@@ -56,7 +56,7 @@ export default class MovieDetails extends Component {
           <div className="movie-details-poster-wrapper">
             <img
               className="movie-details-poster"
-              src={`${BASE_POSTER_PATH}/w500/${movieInfo.poster_path}`}
+              src={`${BASE_POSTER_PATH}/w500${movieInfo.poster_path}`}
               alt="movie poster"
             />
             <div className="movie-details-info">
@@ -69,9 +69,12 @@ export default class MovieDetails extends Component {
               <div>
                 <strong>Average Rating:</strong> {movieInfo.vote_average}
               </div>
-             {reviews.length && <div>
-                <strong>Reviews:</strong> {reviews}
-              </div>}
+              {reviews.length && (
+                <div>
+                  <strong>Reviews:</strong> <br />
+                  {reviews}
+                </div>
+              )}
             </div>
           </div>
         </div>

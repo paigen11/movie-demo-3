@@ -43,7 +43,16 @@
       padding: 20px;
       border-radius: 3%;
       font-family: monospace;
-      font-size: 22px;
+      font-size: 20px;
+      max-height: 750px;
+
+      > div {
+        margin: 20px 0;
+      }
+
+      > div:last-child {
+        margin: 20px 0 0 0;
+      }
     }
   }
 }
