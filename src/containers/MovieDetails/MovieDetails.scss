@@ -23,36 +23,43 @@
   }
 
   .movie-details-poster-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 30px 30px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3% 450px 450px 80px;
+    grid-gap: 15px;
+    justify-items: center;
 
     .movie-details-poster {
       border-radius: 3%;
       border: solid #847f86 10px;
+      grid-row: 2;
     }
 
     .movie-details-info {
+      grid-row: 2 / 3;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      width: 40%;
-      min-height: 400px;
+      width: 90%;
       background: rgba(132, 127, 134, 0.7);
       padding: 20px;
       border-radius: 3%;
       font-family: monospace;
       font-size: 20px;
-      max-height: 750px;
+      overflow: scroll;
+    }
 
-      > div {
-        margin: 20px 0;
-      }
-
-      > div:last-child {
-        margin: 20px 0 0 0;
-      }
+    .movie-details-reviews {
+      grid-column: 2;
+      grid-row: 3 / 4;
+      width: 90%;
+      background: rgba(132, 127, 134, 0.7);
+      padding: 20px;
+      border-radius: 3%;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
     }
   }
 }

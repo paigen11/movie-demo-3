@@ -69,13 +69,13 @@ export default class MovieDetails extends Component {
               <div>
                 <strong>Average Rating:</strong> {movieInfo.vote_average}
               </div>
-              {reviews.length && (
-                <div>
-                  <strong>Reviews:</strong> <br />
-                  {reviews}
-                </div>
-              )}
             </div>
+            {reviews.length > 0 && (
+              <div className="movie-details-reviews">
+                <strong>Reviews:</strong>
+                {reviews}
+              </div>
+            )}
           </div>
         </div>
       );
