@@ -13,7 +13,6 @@ export default class GenreList extends Component {
       const movies = await movieAPI.getMoviesByGenre(this.props.genreId);
       this.setState({ movies, loading: false });
     } catch (err) {
-      console.log('here');
       this.setState({ loading: false, error: true });
     }
   }

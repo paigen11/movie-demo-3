@@ -12,13 +12,12 @@ export const getAllGenres = async () => {
   if (genres.length) {
     return genres;
   }
-
   try {
     const response = await axios.get(
       `${BASE_URL_PATH}genre/movie/list?${API_KEY}`,
     );
     genres = response.data.genres;
-    console.log(genres);
+    // console.log(genres);
     return genres;
   } catch (err) {
     console.error(`Something went wrong fetching the now playing data: ${err}`);
@@ -31,7 +30,7 @@ export const getMoviesByGenre = async genreId => {
     const response = await axios.get(
       `${BASE_URL_PATH}discover/movie?${API_KEY}&with_genres=${genreId}`,
     );
-    console.log(response.data.results);
+    // console.log(response.data.results);
     return response.data.results;
   } catch (err) {
     console.error(`Something went wrong fetching the now playing data: ${err}`);
@@ -44,7 +43,7 @@ export const getNowPlaying = async () => {
     const response = await axios.get(
       `${BASE_MOVIE_PATH}now_playing?${API_KEY}`,
     );
-    console.log(response.data);
+    // console.log(response.data);
     return response.data.results;
   } catch (err) {
     console.error(`Something went wrong fetching the now playing data: ${err}`);
@@ -55,7 +54,7 @@ export const getNowPlaying = async () => {
 export const getUpcoming = async () => {
   try {
     const response = await axios.get(`${BASE_MOVIE_PATH}upcoming?${API_KEY}`);
-    console.log(response.data);
+    // console.log(response.data);
     return response.data.results;
   } catch (err) {
     console.error(`Something went wrong fetching the now playing data: ${err}`);
@@ -68,7 +67,7 @@ export const getMovieReviews = async movieId => {
     const response = await axios.get(
       `${BASE_MOVIE_PATH}${movieId}/reviews?${API_KEY}`,
     );
-    console.log('reviews', response.data.results);
+    // console.log('reviews', response.data.results);
     return response.data.results;
   } catch (err) {
     console.error(`There was a problem finding movies: ${err}`);
@@ -81,7 +80,7 @@ export const searchMovies = async searchInput => {
     const response = await axios.get(
       `${SEARCH_MOVIE_PATH}?query=${searchInput}&${API_KEY}`,
     );
-    console.log(response.data.results);
+    // console.log(response.data.results);
     return response.data.results;
   } catch (err) {
     console.error(`There was a problem finding movies: ${err}`);
@@ -92,7 +91,7 @@ export const searchMovies = async searchInput => {
 export const getMovieDetailsById = async movieId => {
   try {
     const response = await axios.get(`${BASE_MOVIE_PATH}${movieId}?${API_KEY}`);
-    console.log(response.data);
+    // console.log(response.data);
     return response.data;
   } catch (err) {
     console.error(

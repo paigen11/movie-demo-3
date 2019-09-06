@@ -11,7 +11,6 @@ export default class MovieList extends Component {
   };
 
   selectedMovieHandler = movieId => {
-    console.log(movieId);
     if (movieId !== null) {
       this.setState({ id: movieId, movieDetails: true });
     }
