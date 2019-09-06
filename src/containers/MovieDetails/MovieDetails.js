@@ -29,7 +29,6 @@ export default class MovieDetails extends Component {
     if (movieReviews && movieReviews.length > 2) {
       const prevReviews = movieReviews.slice(0, 2);
       otherReviews = movieReviews.length - 2;
-      console.log(otherReviews);
       reviews = prevReviews.map(review => {
         return (
           <Review key={review.id} author={review.author} review={review} />
