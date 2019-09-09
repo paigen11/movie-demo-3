@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import GenreList from './GenreList';
+import { Redirect } from 'react-router-dom';
+// import GenreList from './GenreList';
 import Genre from '../../components/Genre/Genre';
 import * as movieAPI from '../../services/movieAPI';
 import './Genres.scss';
@@ -12,6 +13,7 @@ export default class Genres extends Component {
     error: false,
     selectedGenreName: '',
   };
+
   async componentDidMount() {
     try {
       const genres = await movieAPI.getAllGenres();
@@ -21,8 +23,18 @@ export default class Genres extends Component {
     }
   }
 
-  goToGenreList = (genreId, genreName) => {
+  selectedGenreHandler = (genreId, genreName) => {
     this.setState({ selectedGenre: genreId, selectedGenreName: genreName });
+  };
+
+  renderRedirect = () => {
+    if (this.state.selectedGenre !== 0 && this.state.selectedGenreName !== '') {
+      return (
+        <Redirect
+          to={`/genres/${this.state.selectedGenreName}/${this.state.selectedGenre}`}
+        />
+      );
+    }
   };
 
   render() {
@@ -36,7 +48,7 @@ export default class Genres extends Component {
             key={genre.id}
             id={genre.id}
             name={genre.name}
-            goToGenreList={this.goToGenreList}
+            goToGenreList={this.selectedGenreHandler}
           />
         );
       });
@@ -52,17 +64,11 @@ export default class Genres extends Component {
 
     return (
       <>
-        {this.state.selectedGenre === 0 ? (
-          <>
-            <h1>Choose a Genre</h1>
-            <div className="genre-list">{genreInfo}</div>
-          </>
-        ) : (
-          <GenreList
-            genreId={this.state.selectedGenre}
-            genreName={this.state.selectedGenreName}
-          />
-        )}
+        <h1>Choose a Genre</h1>
+        <div className="genre-list">
+          {this.renderRedirect()}
+          {genreInfo}
+        </div>
       </>
     );
   }

@@ -8,19 +8,25 @@ export default class GenreList extends Component {
     loading: true,
     error: false,
   };
+
   async componentDidMount() {
-    try {
-      const movies = await movieAPI.getMoviesByGenre(this.props.genreId);
-      this.setState({ movies, loading: false });
-    } catch (err) {
-      this.setState({ loading: false, error: true });
+    if (this.props.match.params) {
+      console.log(this.props.match.params);
+      try {
+        const movies = await movieAPI.getMoviesByGenre(
+          this.props.match.params.genreId,
+        );
+        this.setState({ movies, loading: false });
+      } catch (err) {
+        this.setState({ loading: false, error: true });
+      }
     }
   }
 
   render() {
     return (
       <>
-        <h1>{this.props.genreName} Movies</h1>
+        <h1>{this.props.match.params.genreName} Movies</h1>
         <MovieList
           loading={this.state.loading}
           error={this.state.error}

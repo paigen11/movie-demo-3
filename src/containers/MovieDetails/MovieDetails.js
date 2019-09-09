@@ -12,20 +12,23 @@ export default class MovieDetails extends Component {
     movieInfo: null,
     movieReviews: null,
     loading: true,
+    error: true,
   };
 
   async componentDidMount() {
     if (this.props.match.params.id) {
-      const movieInfo = await getMovieDetailsById(this.props.match.params.id);
-      console.log(movieInfo);
-      const movieReviews = await getMovieReviews(this.props.match.params.id);
-      console.log(movieReviews);
-      this.setState({ loading: false, movieInfo, movieReviews });
+      try {
+        const movieInfo = await getMovieDetailsById(this.props.match.params.id);
+        const movieReviews = await getMovieReviews(this.props.match.params.id);
+        this.setState({ loading: false, movieInfo, movieReviews });
+      } catch (err) {
+        this.setState({ loading: false, error: true });
+      }
     }
   }
 
   render() {
-    const { movieInfo, loading, movieReviews } = this.state;
+    const { movieInfo, loading, movieReviews, error } = this.state;
     let reviews;
     let otherReviews;
     if (movieReviews && movieReviews.length > 2) {
@@ -45,6 +48,12 @@ export default class MovieDetails extends Component {
     }
 
     let movieDetails = null;
+
+    if (error) {
+      movieDetails = (
+        <h3>Woops, something went wrong trying to fetch movie details.</h3>
+      );
+    }
 
     if (loading) {
       movieDetails = (
