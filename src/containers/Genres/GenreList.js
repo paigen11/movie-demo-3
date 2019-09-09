@@ -11,7 +11,6 @@ export default class GenreList extends Component {
 
   async componentDidMount() {
     if (this.props.match.params) {
-      console.log(this.props.match.params);
       try {
         const movies = await movieAPI.getMoviesByGenre(
           this.props.match.params.genreId,
