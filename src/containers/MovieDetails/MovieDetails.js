@@ -17,7 +17,9 @@ export default class MovieDetails extends Component {
   async componentDidMount() {
     if (this.props.match.params.id) {
       const movieInfo = await getMovieDetailsById(this.props.match.params.id);
+      console.log(movieInfo);
       const movieReviews = await getMovieReviews(this.props.match.params.id);
+      console.log(movieReviews);
       this.setState({ loading: false, movieInfo, movieReviews });
     }
   }
@@ -79,7 +81,7 @@ export default class MovieDetails extends Component {
                 <strong>Average Rating:</strong> {movieInfo.vote_average}
               </div>
             </div>
-            {reviews.length > 0 && (
+            {reviews && reviews.length > 0 && (
               <div className="movie-details-reviews">
                 <strong>Reviews:</strong>
                 {reviews}
