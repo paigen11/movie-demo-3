@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-// import GenreList from './GenreList';
 import Genre from '../../components/Genre/Genre';
 import * as movieAPI from '../../services/movieAPI';
 import './Genres.scss';
