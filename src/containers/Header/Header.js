@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import TmdbIcon from '../../assets/tmdbIcon.png';
+import TmdbIcon from '../../assets/tmdb-power.png';
 import './Header.scss';
 
 function Header() {

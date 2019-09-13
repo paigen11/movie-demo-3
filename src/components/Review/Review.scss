@@ -1,5 +1,10 @@
 .review-component {
   height: 200px;
   overflow: scroll;
-  margin-top: 10px;
+  margin-top: 15px;
+  flex-grow: 1;
+
+  p {
+    width: 100%;
+  }
 }

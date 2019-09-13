@@ -1,10 +1,22 @@
 .movie-details-wrapper {
   color: white;
+  margin: auto;
 
-  h1 {
-    background: rgba(132, 127, 134, 0.8);
-    padding: 20px;
-    display: inline-block;
+  .movie-details-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      background: rgba(132, 127, 134, 0.8);
+      padding: 20px;
+      margin: auto;
+    }
+
+    .fa {
+      font-size: 40px;
+      padding-left: 20px;
+    }
   }
 
   img.movie-details-backdrop {
@@ -59,7 +71,7 @@
       font-family: monospace;
       display: flex;
       flex-direction: column;
-      font-size: 16px;
+      font-size: 20px;
     }
   }
 }
