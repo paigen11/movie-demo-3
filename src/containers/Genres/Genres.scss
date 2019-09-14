@@ -5,3 +5,17 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.genre-search-title {
+  display: flex;
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+  .fa {
+    font-size: 40px;
+    margin: 0 10px 0 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+}

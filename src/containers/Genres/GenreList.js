@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { withLastLocation } from 'react-router-last-location';
 import MovieList from '../../components/Movie/MovieList';
 import * as movieAPI from '../../services/movieAPI';
+import './Genres.scss';
 
-export default class GenreList extends Component {
+class GenreList extends Component {
   state = {
     movies: [],
     loading: true,
@@ -23,8 +25,22 @@ export default class GenreList extends Component {
   }
 
   render() {
+    let pathname;
+    if (this.props.lastLocation === null) {
+      pathname = '/genres';
+    } else {
+      pathname = this.props.lastLocation.pathname;
+    }
+
     return (
       <>
+        <div
+          className="genre-search-title"
+          onClick={() => this.props.history.push(`${pathname}`)}
+        >
+          <i className="fa fa-chevron-left" aria-hidden="true" />
+          <p>Back to Genres</p>
+        </div>
         <h1>{this.props.match.params.genreName} Movies</h1>
         <MovieList
           loading={this.state.loading}
@@ -35,3 +51,5 @@ export default class GenreList extends Component {
     );
   }
 }
+
+export default withLastLocation(GenreList);
