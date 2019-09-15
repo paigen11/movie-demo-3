@@ -1,6 +1,7 @@
 .movie-details-wrapper {
   color: white;
   margin: auto;
+  cursor: default;
 
   .movie-details-title {
     display: flex;
@@ -11,11 +12,13 @@
       background: rgba(132, 127, 134, 0.8);
       padding: 20px;
       margin: auto;
+      border-radius: 10px;
     }
 
     .fa {
       font-size: 40px;
       padding-left: 20px;
+      cursor: pointer;
     }
   }
 
@@ -42,7 +45,7 @@
     justify-items: center;
 
     .movie-details-poster {
-      border-radius: 3%;
+      border-radius: 10px;
       border: solid #847f86 10px;
       grid-row: 2;
     }
@@ -55,7 +58,7 @@
       width: 90%;
       background: rgba(132, 127, 134, 0.7);
       padding: 20px;
-      border-radius: 3%;
+      border-radius: 10px;
       font-family: monospace;
       font-size: 20px;
       overflow: scroll;
@@ -67,7 +70,7 @@
       width: 90%;
       background: rgba(132, 127, 134, 0.7);
       padding: 20px;
-      border-radius: 3%;
+      border-radius: 10px;
       font-family: monospace;
       display: flex;
       flex-direction: column;

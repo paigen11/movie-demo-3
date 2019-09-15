@@ -25,18 +25,11 @@ class GenreList extends Component {
   }
 
   render() {
-    let pathname;
-    if (this.props.lastLocation === null) {
-      pathname = '/genres';
-    } else {
-      pathname = this.props.lastLocation.pathname;
-    }
-
     return (
       <>
         <div
           className="genre-search-title"
-          onClick={() => this.props.history.push(`${pathname}`)}
+          onClick={() => this.props.history.push('/genres')}
         >
           <i className="fa fa-chevron-left" aria-hidden="true" />
           <p>Back to Genres</p>

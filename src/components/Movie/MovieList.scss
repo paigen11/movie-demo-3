@@ -1,6 +1,7 @@
 .movie-component {
   display: flex;
   margin: 20px 10px;
+  cursor: default;
 
   .movie-details {
     display: flex;
@@ -9,7 +10,7 @@
   }
 
   .movie-poster {
-    border-radius: 3%;
+    border-radius: 10px;
     border: solid #847f86 3px;
   }
 
