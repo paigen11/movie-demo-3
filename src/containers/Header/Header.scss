@@ -1,5 +1,4 @@
 .navbar-wrapper {
-  background: #b65be1;
   margin-top: -25px;
   font-size: 24px;
 }
@@ -8,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #b65be1;
 
   .navbar-top-links {
     display: flex;
@@ -32,9 +32,4 @@
 
 a.active {
   color: #5be1b6;
-}
-
-.bars {
-  font-size: 45px;
-  color: white;
 }
