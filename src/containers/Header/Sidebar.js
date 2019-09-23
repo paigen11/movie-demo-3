@@ -31,7 +31,7 @@ const Sidebar = () => {
       </ul>
       <CSSTransition
         in={expandedLinks}
-        timeout={1000}
+        timeout={500}
         classNames="visible"
         unmountOnExit
       >
