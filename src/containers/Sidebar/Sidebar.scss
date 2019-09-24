@@ -60,6 +60,7 @@
   a {
     text-decoration: none;
     color: white;
+    font-size: 28px;
   }
 
   a.active {
@@ -72,7 +73,7 @@
   flex-direction: column;
   justify-content: space-around;
   transform: translate(-50%);
-  transition: transform 0.5s linear;
+  transition: transform 0.3s linear;
   margin-top: -25px;
   height: 50vh;
 }
@@ -97,6 +98,7 @@
   a {
     text-decoration: none;
     color: white;
+    font-size: 28px;
   }
 
   a.active {
@@ -106,7 +108,7 @@
 
 .visible-exit {
   transform: translate(100%);
-  transition: transform 0.5s linear;
+  transition: transform 0.3s linear;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -125,6 +127,7 @@
   a {
     text-decoration: none;
     color: white;
+    font-size: 28px;
   }
 
   a.active {
@@ -135,7 +138,7 @@
 .visible-exit-active {
   width: 50%;
   transform: translate(-100%);
-  transition: transform 0.5s linear;
+  transition: transform 0.3s linear;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

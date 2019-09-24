@@ -23,3 +23,30 @@
     }
   }
 }
+
+.dashboard-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .dashboard-card-wrapper {
+    border-radius: 25px;
+    border: solid 25px #e1b65b;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+
+    .fa {
+      font-size: 8em;
+    }
+
+    a {
+      text-decoration: none;
+      color: #8944a9;
+    }
+  }
+}

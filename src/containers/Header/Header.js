@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Breakpoint } from 'react-socks';
 import TmdbIcon from '../../assets/tmdb-power.png';
-import Sidebar from './Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import './Header.scss';
 
 const Header = () => {
