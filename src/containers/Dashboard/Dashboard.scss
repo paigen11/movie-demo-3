@@ -24,6 +24,33 @@
   }
 }
 
+.dashboard-tablet {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 75vh;
+  flex-wrap: wrap;
+
+  .dashboard-card-wrapper {
+    border-radius: 25px;
+    border: solid 25px #e1b65b;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fa {
+      font-size: 8em;
+    }
+
+    a {
+      text-decoration: none;
+      color: #8944a9;
+    }
+  }
+}
+
 .dashboard-mobile {
   display: flex;
   flex-direction: column;
