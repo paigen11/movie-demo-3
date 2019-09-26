@@ -29,8 +29,48 @@
   }
 }
 
+.movie-component-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .movie-title {
+    padding: 0 30px;
+  }
+
+  .movie-poster {
+    border-radius: 10px;
+    border: solid #847f86 3px;
+    width: calc(100% - 20px);
+    min-width: 300px;
+  }
+
+  .movie-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .movie-overview {
+    padding: 0 20px;
+    font-family: monospace;
+    font-size: 16px;
+  }
+
+  .movie-released {
+    font-size: 18px;
+  }
+}
+
 .movie-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.movie-list-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
