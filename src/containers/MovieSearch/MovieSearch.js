@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Breakpoint } from 'react-socks';
 import * as movieAPI from '../../services/movieAPI';
 import MovieList from '../../components/Movie/MovieList';
 import './MovieSearch.scss';
@@ -9,6 +10,7 @@ export default class MovieSearch extends Component {
     movies: null,
     error: false,
     loading: false,
+    prevSearch: null,
   };
 
   handleChange = event => {
@@ -21,15 +23,19 @@ export default class MovieSearch extends Component {
     try {
       this.setState({ loading: true });
       const movies = await movieAPI.searchMovies(this.state.value);
-      this.setState({ movies, loading: false });
+      this.setState({
+        movies,
+        loading: false,
+        prevSearch: this.state.value,
+        value: '',
+      });
     } catch (err) {
       this.setState({ error: true, loading: false });
     }
   };
 
   render() {
-    const { movies, error, loading } = this.state;
-
+    const { movies, error, loading, prevSearch } = this.state;
     let movieInfo = null;
 
     if (movies) {
@@ -40,7 +46,7 @@ export default class MovieSearch extends Component {
       } else if (movies.length > 0) {
         movieInfo = (
           <>
-            <h2>Movie Results for: {this.state.value}</h2>
+            <h2>Movie Results for: {prevSearch}</h2>
             <MovieList
               loading={this.state.loading}
               error={this.state.error}
@@ -68,16 +74,32 @@ export default class MovieSearch extends Component {
       <>
         <h1>Movie Search</h1>
         <form className="search-form-wrapper" onSubmit={this.handleSubmit}>
-          <label className="search-label">
-            Search Movie Titles Here:
-            <input
-              className="search-input"
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <input type="submit" value="Search" />
+          <Breakpoint medium up>
+            <label className="search-label">
+              Search Movie Titles Here:
+              <input
+                className="search-input"
+                type="text"
+                value={this.state.value}
+                onChange={this.handleChange}
+                placeholder="Movie title"
+              />
+            </label>
+            <input type="submit" value="Search" />
+          </Breakpoint>
+          <Breakpoint small down>
+            <label className="search-label">
+              Search Movie Titles Here:
+              <input
+                className="search-input"
+                type="text"
+                value={this.state.value}
+                onChange={this.handleChange}
+                placeholder="Movie title"
+              />
+            </label>
+            <input type="submit" value="Search" />
+          </Breakpoint>
         </form>
         {movieInfo ? movieInfo : null}
       </>

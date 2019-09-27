@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { Breakpoint } from 'react-socks';
 import Genre from '../../components/Genre/Genre';
 import * as movieAPI from '../../services/movieAPI';
 import './Genres.scss';
@@ -39,6 +40,7 @@ export default class Genres extends Component {
   render() {
     const { error, loading, genres } = this.state;
     let genreInfo = null;
+    let info = null;
 
     if (!loading && !error && genres.length) {
       genreInfo = genres.map(genre => {
@@ -54,21 +56,36 @@ export default class Genres extends Component {
     }
 
     if (error) {
-      genreInfo = <h3>Woops, something went wrong trying to fetch genres.</h3>;
+      info = 'Woops, something went wrong trying to fetch genres.';
     }
 
     if (loading) {
-      genreInfo = <h3>Loading genre data now...</h3>;
+      info = 'Loading genre data now...';
     }
 
     return (
-      <>
+      <div className="genres-page">
         <h1>Choose a Genre</h1>
-        <div className="genre-list">
-          {this.renderRedirect()}
-          {genreInfo}
-        </div>
-      </>
+        {(error || loading) && <h3>{info}</h3>}
+        <Breakpoint large up>
+          <div className="genre-list">
+            {this.renderRedirect()}
+            {genreInfo}
+          </div>
+        </Breakpoint>
+        <Breakpoint medium>
+          <div className="genre-list">
+            {this.renderRedirect()}
+            {genreInfo}
+          </div>
+        </Breakpoint>
+        <Breakpoint small down>
+          <div className="genre-list">
+            {this.renderRedirect()}
+            {genreInfo}
+          </div>
+        </Breakpoint>
+      </div>
     );
   }
 }

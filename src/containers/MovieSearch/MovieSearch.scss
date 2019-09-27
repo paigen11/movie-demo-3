@@ -1,5 +1,6 @@
 .search-form-wrapper {
   font-size: 24px;
+  margin: auto 20px;
 
   .search-label {
     .search-input {
@@ -15,5 +16,21 @@
     padding: 2px 12px;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .breakpoint__small-down {
+    .search-input {
+      height: 40px;
+      width: 200px;
+      margin-top: 10px;
+    }
+
+    input[type='submit'] {
+      background-color: #e1735b;
+      font-size: 24px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
 }
