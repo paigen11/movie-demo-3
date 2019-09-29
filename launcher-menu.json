@@ -1,0 +1,13 @@
+{
+  "menu": {
+    "description": "",
+    "start:help": "Runs the app in the development mode.",
+    "start": "react:start",
+    "build:help": "Builds the app for production to the `build` folder.",
+    "build": "react:build",
+    "test:help": "Launches the test runner in the interactive watch mode.",
+    "test": "react:test",
+    "eject:help": "Eject preconfigured configuration and customize it.",
+    "eject": "react:eject"
+  }
+}
