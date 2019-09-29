@@ -4,7 +4,7 @@
     "react:eject": [
       "echo $launch_style_red$launch_style_bold\\*\\*Note: this is a one-way operation. Once you \\`eject\\`, you can’t go back!\\*\\*$launch_style_normal",
       "",
-      "cli-confirm '${launch_style_bold}Are you sure (y/N):$launch_style_normal'",
+      "launch --confirm '${launch_style_bold}Are you sure$launch_style_normal'",
       "react:eject"
     ],
     "test": "react:test"

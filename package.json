@@ -34,7 +34,6 @@
     ]
   },
   "devDependencies": {
-    "cli-confirm": "^1.0.1",
-    "script-launcher": "^1.21.0"
+    "script-launcher": "^1.22.0"
   }
 }
