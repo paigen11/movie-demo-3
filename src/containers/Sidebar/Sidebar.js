@@ -8,7 +8,6 @@ const Sidebar = () => {
   const [expandedLinks, setExpandedLinks] = useState(false);
 
   const toggleLinks = () => () => {
-    console.log('clicked');
     setExpandedLinks(!expandedLinks);
   };
 

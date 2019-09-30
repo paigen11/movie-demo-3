@@ -69,8 +69,8 @@
 }
 
 .movie-list-mobile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  .breakpoint__medium-down {
+    align-items: center;
+    flex-direction: column;
+  }
 }

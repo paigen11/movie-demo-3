@@ -78,3 +78,41 @@
     }
   }
 }
+
+.breakpoint__medium-down {
+  display: flex;
+  flex-direction: column;
+
+  .movie-details-backdrop-mobile {
+    min-height: 100%;
+    top: 63px;
+    position: fixed;
+    z-index: -2;
+    height: auto;
+  }
+
+  .movie-details-info {
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    background: rgba(132, 127, 134, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 20px;
+    overflow: scroll;
+  }
+
+  .movie-details-reviews {
+    width: 90%;
+    background: rgba(132, 127, 134, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+}
