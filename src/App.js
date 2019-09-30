@@ -8,7 +8,7 @@ import Upcoming from './containers/Upcoming/Upcoming';
 import MovieSearch from './containers/MovieSearch/MovieSearch';
 import Genres from './containers/Genres/Genres';
 import GenreList from './containers/Genres/GenreList';
-import MovieDetails from './containers/MovieDetails/MovieDetails';
+import MovieDetailsContainer from './containers/MovieDetails/MovieDetailsContainer';
 import Header from './containers/Header/Header';
 import './App.css';
 
@@ -30,7 +30,7 @@ function App() {
                 path="/genres/:genreName/:genreId"
                 component={GenreList}
               />
-              <Route exact path="/movie/:id" component={MovieDetails} />
+              <Route exact path="/movie/:id" component={MovieDetailsContainer} />
             </Switch>
           </LastLocationProvider>
         </Router>

@@ -35,7 +35,7 @@ export class Dashboard extends Component {
             </div>
           </div>
         </Breakpoint>
-        <Breakpoint medium up>
+        <Breakpoint medium only>
           <div className="dashboard-tablet" data-testid="main__dashboard">
             <div className="dashboard-card-wrapper">
               <NavLink to="/nowplaying">
