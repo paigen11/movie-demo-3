@@ -75,7 +75,7 @@ class MovieDetailsContainer extends Component {
               movieReviews={movieReviews}
             />
           </Breakpoint>
-          <Breakpoint medium up>
+          <Breakpoint large up>
             <MovieDetails
               pathname={pathname}
               movieInfo={movieInfo}
