@@ -67,7 +67,7 @@ class GenreList extends Component {
           </Breakpoint>
           <Breakpoint small down>
             <i className="fa fa-chevron-left" aria-hidden="true" />
-            <h1>{this.props.match.params.genreName} Movies</h1>
+            <h1>{this.props.match.params.genreName}</h1>
           </Breakpoint>
         </div>
         {movieGenreInfo}

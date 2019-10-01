@@ -12,7 +12,7 @@
   }
 
   .sidebar-link-logo {
-    margin: 8px auto 0 auto;
+    margin: 8px 35px 0 0;
   }
 
   .sidebar-link-logo > a > img {
@@ -39,6 +39,7 @@
 }
 
 .visible-enter {
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -69,6 +70,7 @@
 }
 
 .visible-enter-active {
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -98,6 +100,7 @@
 }
 
 .visible-enter-done {
+  z-index: 100;
   display: flex;
   width: 60%;
   flex-direction: column;
@@ -126,6 +129,7 @@
 }
 
 .visible-exit {
+  z-index: 100;
   transform: translate(0);
   transition: transform 0.3s linear;
   display: flex;
@@ -156,6 +160,7 @@
 }
 
 .visible-exit-active {
+  z-index: 100;
   width: 60%;
   transform: translate(-100%);
   transition: transform 0.3s linear;
