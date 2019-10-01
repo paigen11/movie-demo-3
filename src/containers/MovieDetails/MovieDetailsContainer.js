@@ -62,7 +62,7 @@ class MovieDetailsContainer extends Component {
       movieDetails = (
         <div className="movie-details-wrapper">
           <Breakpoint medium down >
-            <MovieDetailsMobile pathname={pathname} history={this.props.history} movieInfo={movieInfo} movieReviews={movieReviews}/>
+            <MovieDetailsMobile movieInfo={movieInfo} movieReviews={movieReviews}/>
           </Breakpoint>
           <Breakpoint medium up >
             <MovieDetails pathname={pathname} history={this.props.history} movieInfo={movieInfo} movieReviews={movieReviews}/>

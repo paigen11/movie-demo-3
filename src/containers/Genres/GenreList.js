@@ -9,14 +9,14 @@ class GenreList extends Component {
   state = {
     movies: [],
     loading: true,
-    error: false
+    error: false,
   };
 
   async componentDidMount() {
     if (this.props.match.params) {
       try {
         const movies = await movieAPI.getMoviesByGenre(
-          this.props.match.params.genreId
+          this.props.match.params.genreId,
         );
         this.setState({ movies, loading: false });
       } catch (err) {
@@ -58,13 +58,17 @@ class GenreList extends Component {
           className="genre-search-title"
           onClick={() => this.props.history.push('/genres')}
         >
-          <div className ='back-navigation'>
-            <i className="fa fa-chevron-left" aria-hidden="true" />
-            <Breakpoint medium up>
+          <Breakpoint medium up>
+            <div>
+              <i className="fa fa-chevron-left" aria-hidden="true" />
               <p>Back to Genres</p>
-            </Breakpoint>
-          </div>
-          <h1>{this.props.match.params.genreName} Movies</h1>
+            </div>
+            <h1>{this.props.match.params.genreName} Movies</h1>
+          </Breakpoint>
+          <Breakpoint small down>
+            <i className="fa fa-chevron-left" aria-hidden="true" />
+            <h1>{this.props.match.params.genreName} Movies</h1>
+          </Breakpoint>
         </div>
         {movieGenreInfo}
       </>

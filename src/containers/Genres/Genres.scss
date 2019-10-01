@@ -12,46 +12,30 @@
   }
 }
 
-.breakpoint__medium-only {
-  .genre-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  h3 {
-    font-size: 18px;
-    width: 80%;
-  }
-  .genre-component {
-    width: 170px;
-    height: 170px;
+// tablet view genre list
+@media only screen and (min-width: 600px) and (max-width: 969px) {
+  .genres-page {
+    .genre-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
     h3 {
       font-size: 22px;
     }
-    .genre-component {
-      width: 170px;
-      height: 170px;
-      h3 {
-        font-size: 22px;
-      }
+  }
+}
+
+// mobile view genre list
+@media only screen and (min-width: 375px) and (max-width: 599px) {
+  .genres-page {
+    .genre-list {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }
 
-.breakpoint__small-down {
-  .genre-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  h3 {
-    font-size: 18px;
-    width: 80%;
-  }
-  .genre-component {
-    width: 140px;
-    height: 140px;
-    font-size: 18px;
-  }
-}
-
+// desktop view
 .genre-search-title {
+  display: flex;
   align-items: center;
   max-width: 1500px;
   margin: auto;
@@ -61,28 +45,43 @@
     margin: 0 10px 0 20px;
   }
   p {
-    font-size: 16px;
+    font-size: 18px;
+  }
+}
+
+.genre-search-mobile-title {
+  .fa {
+    display: none;
+  }
+  h1 {
+    margin: auto;
+  }
+}
+
+h3 {
+  margin: 200px auto;
+}
+
+// tablet/mobile view genre results
+@media only screen and (min-width: 375px) and (max-width: 969px) {
+  .genre-search-title {
+    display: none;
   }
 
-  .breakpoint__medium-up {
-    div {
-      display: flex;
-      align-items: center;
-      position: fixed;
-    }
-  }
-
-  .breakpoint__small-down {
+  .genre-search-mobile-title {
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
+    cursor: pointer;
     .fa {
+      display: block;
       font-size: 40px;
-      margin: 0 0 0 20px;
+      margin: 0 10px 0 20px;
     }
+  }
 
-    h1 {
-      margin: 20px;
-    }
+  h3 {
+    font-size: 18px;
+    width: 80%;
   }
 }
