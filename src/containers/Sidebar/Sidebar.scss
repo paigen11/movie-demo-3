@@ -1,5 +1,6 @@
 .sidebar-top {
   background: #b65be1;
+  cursor: pointer;
   .sidebar-links {
     display: flex;
     align-items: center;
@@ -20,6 +21,7 @@
   }
 
   .bars {
+    padding: 20px;
     font-size: 45px;
     color: white;
     width: auto;

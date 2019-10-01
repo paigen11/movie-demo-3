@@ -7,7 +7,7 @@ import './MovieList.scss';
 export default class MovieList extends Component {
   state = {
     id: null,
-    movieDetails: false,
+    movieDetails: false
   };
 
   selectedMovieHandler = movieId => {
@@ -58,10 +58,10 @@ export default class MovieList extends Component {
     }
 
     return (
-          <div className="movie-list">
-            {this.renderRedirect()}
-            {movieInfo}
-          </div>
+      <div className="movie-list">
+        {this.renderRedirect()}
+        {movieInfo}
+      </div>
     );
   }
 }

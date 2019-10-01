@@ -6,7 +6,7 @@ import './MovieDetailsMobile.scss';
 class MovieDetailsMobile extends Component {
 
   render() {
-    const { movieInfo, movieReviews } = this.props;
+    const { movieInfo, movieReviews, history, pathname } = this.props;
     let reviews;
     let otherReviews;
 
@@ -30,6 +30,10 @@ class MovieDetailsMobile extends Component {
     if (movieInfo) {
       return (<>
         <div className="movie-details-title">
+            <i
+              className="fa fa-chevron-left"
+              onClick={() => history.push(`${pathname}`)}
+              />
             <h1>{movieInfo.title}</h1>
         </div>
         <img
