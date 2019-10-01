@@ -67,24 +67,10 @@ export default class Genres extends Component {
       <div className="genres-page">
         <h1>Choose a Genre</h1>
         {(error || loading) && <h3>{info}</h3>}
-        <Breakpoint large up>
           <div className="genre-list">
             {this.renderRedirect()}
             {genreInfo}
           </div>
-        </Breakpoint>
-        <Breakpoint medium>
-          <div className="genre-list">
-            {this.renderRedirect()}
-            {genreInfo}
-          </div>
-        </Breakpoint>
-        <Breakpoint small down>
-          <div className="genre-list">
-            {this.renderRedirect()}
-            {genreInfo}
-          </div>
-        </Breakpoint>
       </div>
     );
   }
