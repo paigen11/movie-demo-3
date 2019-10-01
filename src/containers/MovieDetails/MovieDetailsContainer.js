@@ -11,7 +11,7 @@ class MovieDetailsContainer extends Component {
     movieInfo: null,
     movieReviews: null,
     loading: true,
-    error: true,
+    error: true
   };
 
   async componentDidMount() {
@@ -23,7 +23,7 @@ class MovieDetailsContainer extends Component {
           loading: false,
           movieInfo,
           movieReviews,
-          error: false,
+          error: false
         });
       } catch (err) {
         this.setState({ loading: false, error: true });
@@ -61,11 +61,26 @@ class MovieDetailsContainer extends Component {
     if (!loading && movieInfo) {
       movieDetails = (
         <div className="movie-details-wrapper">
-          <Breakpoint medium down >
-            <MovieDetailsMobile movieInfo={movieInfo} movieReviews={movieReviews}/>
+          <div className="movie-details-title">
+            <i
+              className="fa fa-chevron-left"
+              onClick={() => this.props.history.push(`${pathname}`)}
+              aria-hidden="true"
+            />
+            <h1>{movieInfo.title}</h1>
+          </div>
+          <Breakpoint medium down>
+            <MovieDetailsMobile
+              movieInfo={movieInfo}
+              movieReviews={movieReviews}
+            />
           </Breakpoint>
-          <Breakpoint medium up >
-            <MovieDetails pathname={pathname} movieInfo={movieInfo} movieReviews={movieReviews}/>
+          <Breakpoint medium up>
+            <MovieDetails
+              pathname={pathname}
+              movieInfo={movieInfo}
+              movieReviews={movieReviews}
+            />
           </Breakpoint>
         </div>
       );

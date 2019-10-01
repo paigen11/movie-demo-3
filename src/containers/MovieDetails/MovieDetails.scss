@@ -15,6 +15,7 @@
   }
 
   .movie-details-poster-wrapper {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 3% 450px 450px 80px;

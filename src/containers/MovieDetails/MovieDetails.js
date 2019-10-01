@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   BASE_BACKDROP_PATH,
-  BASE_POSTER_PATH,
+  BASE_POSTER_PATH
 } from '../../constants/Constants';
 import Review from '../../components/Review/Review';
 import './MovieDetails.scss';
@@ -28,17 +28,9 @@ class MovieDetails extends Component {
       });
     }
 
-
     if (movieInfo) {
-      return (<>
-          <div className="movie-details-title">
-            <i
-              className="fa fa-chevron-left"
-              onClick={() => this.props.history.push(`${pathname}`)}
-              aria-hidden="true"
-              />
-              <h1>{movieInfo.title}</h1>
-          </div>
+      return (
+        <>
           <img
             className="movie-details-backdrop"
             src={`${BASE_BACKDROP_PATH}${movieInfo.backdrop_path}`}
@@ -68,8 +60,7 @@ class MovieDetails extends Component {
                 {otherReviews && (
                   <p>
                     {otherReviews} additional
-                    {otherReviews === 1 ? ' review' : ' reviews'} not shown
-                    here
+                    {otherReviews === 1 ? ' review' : ' reviews'} not shown here
                   </p>
                 )}
               </div>

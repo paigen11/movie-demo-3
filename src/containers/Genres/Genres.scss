@@ -61,14 +61,18 @@
     div {
       display: flex;
       align-items: center;
-      position: fixed;
+      position: absolute;
     }
   }
 
   .breakpoint__small-down {
     display: flex;
     align-items: center;
-
+    justify-content: center;
+    i {
+      position: absolute;
+      left: 20px
+    }
     .fa {
       font-size: 40px;
       margin: 0 0 0 20px;
