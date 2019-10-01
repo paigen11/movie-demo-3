@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BASE_POSTER_PATH } from '../../constants/Constants';
 import Review from '../../components/Review/Review';
-import './SmallMovieDetails.scss';
+import './MovieDetailsMobile.scss';
 
-class SmallMovieDetails extends Component {
+class MovieDetailsMobile extends Component {
 
   render() {
     const { movieInfo, movieReviews } = this.props;
@@ -66,4 +66,4 @@ class SmallMovieDetails extends Component {
   }
 }
 
-export default SmallMovieDetails;
+export default MovieDetailsMobile;

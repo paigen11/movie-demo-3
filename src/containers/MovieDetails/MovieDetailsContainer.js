@@ -3,7 +3,7 @@ import { Breakpoint } from 'react-socks';
 import { withLastLocation } from 'react-router-last-location';
 import { getMovieDetailsById, getMovieReviews } from '../../services/movieAPI';
 import MovieDetails from './MovieDetails';
-import SmallMovieDetails from './SmallMovieDetails';
+import MovieDetailsMobile from './MovieDetailsMobile';
 import './MovieDetailsContainer.scss';
 
 class MovieDetailsContainer extends Component {
@@ -62,7 +62,7 @@ class MovieDetailsContainer extends Component {
       movieDetails = (
         <div className="movie-details-wrapper">
           <Breakpoint medium down >
-            <SmallMovieDetails movieInfo={movieInfo} movieReviews={movieReviews}/>
+            <MovieDetailsMobile movieInfo={movieInfo} movieReviews={movieReviews}/>
           </Breakpoint>
           <Breakpoint medium up >
             <MovieDetails pathname={pathname} movieInfo={movieInfo} movieReviews={movieReviews}/>

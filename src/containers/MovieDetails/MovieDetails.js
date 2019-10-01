@@ -36,8 +36,8 @@ class MovieDetails extends Component {
               className="fa fa-chevron-left"
               onClick={() => this.props.history.push(`${pathname}`)}
               aria-hidden="true"
-            />
-            <h1>{movieInfo.title}</h1>
+              />
+              <h1>{movieInfo.title}</h1>
           </div>
           <img
             className="movie-details-backdrop"
@@ -68,7 +68,8 @@ class MovieDetails extends Component {
                 {otherReviews && (
                   <p>
                     {otherReviews} additional
-                    {otherReviews === 1 ? ' review' : ' reviews'} not shown here
+                    {otherReviews === 1 ? ' review' : ' reviews'} not shown
+                    here
                   </p>
                 )}
               </div>
