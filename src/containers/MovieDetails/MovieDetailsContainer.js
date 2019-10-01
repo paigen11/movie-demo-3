@@ -65,7 +65,7 @@ class MovieDetailsContainer extends Component {
             <MovieDetailsMobile movieInfo={movieInfo} movieReviews={movieReviews}/>
           </Breakpoint>
           <Breakpoint medium up >
-            <MovieDetails pathname={pathname} movieInfo={movieInfo} movieReviews={movieReviews}/>
+            <MovieDetails pathname={pathname} history={this.props.history} movieInfo={movieInfo} movieReviews={movieReviews}/>
           </Breakpoint>
         </div>
       );

@@ -8,7 +8,7 @@ import './MovieDetails.scss';
 
 class MovieDetails extends Component {
   render() {
-    const { movieInfo, movieReviews, pathname } = this.props;
+    const { movieInfo, movieReviews, pathname, history } = this.props;
     let reviews;
     let otherReviews;
 
@@ -34,8 +34,7 @@ class MovieDetails extends Component {
           <div className="movie-details-title">
             <i
               className="fa fa-chevron-left"
-              onClick={() => this.props.history.push(`${pathname}`)}
-              aria-hidden="true"
+              onClick={() => history.push(`${pathname}`)}
               />
               <h1>{movieInfo.title}</h1>
           </div>
