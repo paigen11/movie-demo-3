@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { Breakpoint } from 'react-socks';
 import Movie from './Movie';
 import Card from '../Card/Card';
 import './MovieList.scss';
@@ -58,10 +59,20 @@ export default class MovieList extends Component {
     }
 
     return (
+      <>
+        <Breakpoint medium up>
           <div className="movie-list">
             {this.renderRedirect()}
             {movieInfo}
           </div>
+        </Breakpoint>
+        <Breakpoint small down>
+          <div className="movie-list-mobile">
+            {this.renderRedirect()}
+            {movieInfo}
+          </div>
+        </Breakpoint>
+      </>
     );
   }
 }
