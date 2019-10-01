@@ -12,22 +12,19 @@
   }
 }
 
-.back-navigation {
-  position: absolute;
-  left: 20px;
-  display: flex;
-  align-items: center;
-}
-
-// tablet view genre list
-@media only screen and (min-width: 600px) and (max-width: 969px) {
-  .genres-page {
-    .genre-list {
-      grid-template-columns: repeat(3, 1fr);
-    }
+.breakpoint__medium-only {
+  .genre-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  h3 {
+    font-size: 18px;
+    width: 80%;
+  }
+  .genre-component {
+    width: 170px;
+    height: 170px;
     h3 {
-      font-size: 18px;
-      width: 80%;
+      font-size: 22px;
     }
     .genre-component {
       width: 170px;
@@ -39,30 +36,22 @@
   }
 }
 
-// mobile view genre list
-@media only screen and (min-width: 375px) and (max-width: 599px) {
-  .genres-page {
-    .genre-list {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    h3 {
-      font-size: 18px;
-      width: 80%;
-    }
-    .genre-component {
-      width: 140px;
-      height: 140px;
-      font-size: 18px;
-    }
-    .back-navigation {
-      color: blue;
-    }
+.breakpoint__small-down {
+  .genre-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  h3 {
+    font-size: 18px;
+    width: 80%;
+  }
+  .genre-component {
+    width: 140px;
+    height: 140px;
+    font-size: 18px;
   }
 }
 
 .genre-search-title {
-  display: flex;
-  justify-content: center;
   align-items: center;
   max-width: 1500px;
   margin: auto;
@@ -80,6 +69,20 @@
       display: flex;
       align-items: center;
       position: fixed;
+    }
+  }
+
+  .breakpoint__small-down {
+    display: flex;
+    align-items: center;
+
+    .fa {
+      font-size: 40px;
+      margin: 0 0 0 20px;
+    }
+
+    h1 {
+      margin: 20px;
     }
   }
 }
