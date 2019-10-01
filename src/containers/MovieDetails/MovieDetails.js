@@ -43,7 +43,7 @@ class MovieDetails extends Component {
               alt="movie poster"
             />
             <div className="movie-details-info">
-              <div>
+              <div className="movie-details-info__overview">
                 <strong>Movie Overview:</strong> {movieInfo.overview}
               </div>
               <div>

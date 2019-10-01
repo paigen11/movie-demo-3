@@ -34,7 +34,7 @@ class MovieDetailsMobile extends Component {
             alt="movie background"
           />
           <div className="movie-details-info">
-            <div>
+            <div className="movie-details-info__overview">
               <strong>Movie Overview:</strong> {movieInfo.overview}
             </div>
             <div>

@@ -16,6 +16,7 @@
 
   .movie-details-poster-wrapper {
     width: 100%;
+    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 3% 450px 450px 80px;
@@ -40,6 +41,11 @@
       font-family: monospace;
       font-size: 20px;
       overflow: scroll;
+
+      .movie-details-info__overview{
+        height: 400px;
+        overflow: scroll;
+      }
     }
 
     .movie-details-reviews {
