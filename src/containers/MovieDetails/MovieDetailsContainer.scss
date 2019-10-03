@@ -1,45 +1,44 @@
 .movie-details-wrapper {
-    color: white;
-    margin: auto;
-    cursor: default;
-  
-    .movie-details-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  
-      h1 {
-        background: rgba(132, 127, 134, 0.8);
-        width: 50%;
-        padding: 20px;
-        margin: auto;
-        border-radius: 10px;
-      }
-  
-      .fa {
-        position: absolute;
-        font-size: 40px;
-        padding-left: 20px;
-        cursor: pointer;
-      }
+  color: white;
+  margin: auto;
+  cursor: default;
+
+  .movie-details-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      background: rgba(132, 127, 134, 0.8);
+      width: 50%;
+      padding: 20px;
+      margin: auto;
+      border-radius: 10px;
     }
-  
-    .movie-details-info {
+
+    .fa {
+      position: absolute;
+      font-size: 40px;
+      padding-left: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .movie-details-info {
     background: rgba(132, 127, 134, 0.7);
     padding: 20px;
     border-radius: 10px;
     font-family: monospace;
     font-size: 20px;
     overflow: scroll;
-    }
+    height: 300px;
+  }
 
-    .movie-details-reviews {
+  .movie-details-reviews {
     background: rgba(132, 127, 134, 0.7);
     padding: 20px;
     border-radius: 10px;
     font-family: monospace;
     font-size: 20px;
-    }
+  }
 }
-
-  

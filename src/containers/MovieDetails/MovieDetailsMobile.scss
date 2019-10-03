@@ -16,24 +16,27 @@
 
   .movie-details-info {
     background: rgba(132, 127, 134, 0.7);
-    padding: 20px;
+    min-width: 300px;
+    width: calc(80% - 20px);
     border-radius: 10px;
     font-family: monospace;
     font-size: 20px;
     margin: 20px auto;
 
     .movie-details-info__overview {
-      height: 400px;
+      max-height: 400px;
       overflow: scroll;
+      margin-bottom: 20px;
     }
   }
 
   .movie-details-reviews {
     background: rgba(132, 127, 134, 0.7);
-    padding: 20px;
+    min-width: 300px;
+    width: calc(80% - 20px);
     border-radius: 10px;
     font-family: monospace;
     font-size: 20px;
-    margin: 20px 0;
+    margin: auto auto 40px auto;
   }
 }

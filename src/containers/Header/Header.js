@@ -15,7 +15,6 @@ const Header = () => {
               <img src={TmdbIcon} alt="logo" />
             </NavLink>
           </li>
-
           <div className="navbar-top-links">
             <li className="navbar-link">
               <NavLink to="/nowplaying">Now Playing</NavLink>
