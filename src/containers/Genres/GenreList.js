@@ -29,9 +29,10 @@ class GenreList extends Component {
     const { movies, loading, error } = this.state;
 
     let movieGenreInfo;
+    let info;
 
     if (error) {
-      movieGenreInfo = (
+      info = (
         <h3>
           Woops, something went wrong trying to fetch movies of this genre.
         </h3>
@@ -39,7 +40,7 @@ class GenreList extends Component {
     }
 
     if (loading) {
-      movieGenreInfo = <h3>Loading movies of this genre now...</h3>;
+      info = <h3>Loading movies of this genre now...</h3>;
     }
 
     if (movies.length > 0 && !loading) {
@@ -70,6 +71,7 @@ class GenreList extends Component {
             <h1>{this.props.match.params.genreName}</h1>
           </Breakpoint>
         </div>
+        <div className="genre-search-info">{info}</div>
         {movieGenreInfo}
       </>
     );

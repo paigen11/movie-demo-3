@@ -69,6 +69,10 @@
 }
 
 .movie-list-mobile {
+  h3 {
+    margin: 50% auto;
+  }
+
   .breakpoint__medium-down {
     align-items: center;
     flex-direction: column;

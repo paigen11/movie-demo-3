@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import {
   BASE_BACKDROP_PATH,
-  BASE_POSTER_PATH
+  BASE_POSTER_PATH,
 } from '../../constants/Constants';
 import Review from '../../components/Review/Review';
 import './MovieDetails.scss';
 
 class MovieDetails extends Component {
   render() {
-    const { movieInfo, movieReviews, pathname } = this.props;
+    const { movieInfo, movieReviews } = this.props;
     let reviews;
     let otherReviews;
 

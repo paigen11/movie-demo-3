@@ -36,3 +36,10 @@
     }
   }
 }
+
+@media only screen and (max-width: 575px) {
+  h3 {
+    margin: 40% auto;
+    padding: 30px;
+  }
+}
