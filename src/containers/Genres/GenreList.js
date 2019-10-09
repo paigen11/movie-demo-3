@@ -45,11 +45,7 @@ class GenreList extends Component {
 
     if (movies.length > 0 && !loading) {
       movieGenreInfo = (
-        <MovieList
-          loading={this.state.loading}
-          error={this.state.error}
-          movies={this.state.movies}
-        />
+        <MovieList loading={loading} error={error} movies={movies} />
       );
     }
 
@@ -71,7 +67,7 @@ class GenreList extends Component {
             <h1>{this.props.match.params.genreName}</h1>
           </Breakpoint>
         </div>
-        <div className="genre-search-info">{info}</div>
+        {info && <div className="genre-search-info">{info}</div>}
         {movieGenreInfo}
       </>
     );
