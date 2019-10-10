@@ -2,6 +2,12 @@
   "name": "movie-demo-3",
   "version": "0.1.0",
   "private": true,
+  "description": "responsive ReactJS movie demo application using react-socks",
+  "repository": "https://github.com/paigen11/movie-demo-3",
+  "engines": {
+    "yarn": "NO LONGER USED - Please use npm",
+    "node": "^10.13.0"
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "node-sass": "^4.12.0",
