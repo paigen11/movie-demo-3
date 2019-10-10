@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Project Details
 
-This is the third demo created for the conference talk: "Responsive Web Design with ReactJS." It demonstrates how to create a responsive movie database website using the NPM package [React Socks](https://www.npmjs.com/package/react-socks), a package that enables easy switching of React components based on browser-size breakpoints.
+This is the third demo created for the conference talk: "Responsive Web Design with ReactJS." It demonstrates how to create a responsive ReactJS movie database website using the NPM package [React Socks](https://www.npmjs.com/package/react-socks), a package that enables easy switching of React components based on browser-size breakpoints.
 
 ## Technologies of Note Powering This App
 
