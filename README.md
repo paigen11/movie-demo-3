@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Demo
+A live demo of this site is available [here](movie-demo-3.paigen11.now.sh).
+
 ## Project Details
 
 This is the third demo created for the conference talk: "Responsive Web Design with ReactJS." It demonstrates how to create a responsive ReactJS movie database website using the NPM package [React Socks](https://www.npmjs.com/package/react-socks), a package that enables easy switching of React components based on browser-size breakpoints.

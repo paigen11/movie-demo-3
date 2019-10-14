@@ -4,7 +4,7 @@
   "private": true,
   "description": "responsive ReactJS movie demo application using react-socks",
   "repository": "https://github.com/paigen11/movie-demo-3",
-  "author": "Paige Niedringhaus (paigen11@gmail.com)",
+  "author": "Paige Niedringhaus (paigen11@gmail.com), Katelyn Marsala (kmarsala5@hotmail.com)",
   "license": "MIT",
   "engines": {
     "yarn": "NO LONGER USED - Please use npm",
