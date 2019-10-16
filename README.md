@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Live Demo
+
 A live demo of this site is available [here](movie-demo-3.paigen11.now.sh).
 
 ## Project Details
