@@ -45,7 +45,6 @@
   justify-content: space-around;
   transform: translate(-100%);
   background: #b65be1;
-  transition: transform 0.3s linear;
   margin-top: -25px;
   height: 50vh;
   width: 60%;
@@ -131,7 +130,6 @@
 .visible-exit {
   z-index: 100;
   transform: translate(0);
-  transition: transform 0.3s linear;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
