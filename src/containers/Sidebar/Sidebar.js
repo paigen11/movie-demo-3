@@ -7,7 +7,7 @@ import './Sidebar.scss';
 const Sidebar = () => {
   const [expandedLinks, setExpandedLinks] = useState(false);
 
-  const toggleLinks = () => () => {
+  const toggleLinks = () => {
     setExpandedLinks(!expandedLinks);
   };
 
@@ -15,7 +15,7 @@ const Sidebar = () => {
     <>
       <ul className="sidebar-top">
         <div className="sidebar-links">
-          <li className="sidebar-link bars" onClick={toggleLinks()}>
+          <li className="sidebar-link bars" onClick={toggleLinks}>
             <i className="fa fa-bars" aria-hidden="true" />
           </li>
           <li
